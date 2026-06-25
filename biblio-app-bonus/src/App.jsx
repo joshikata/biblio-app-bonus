@@ -1,143 +1,86 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import LibroCard from './components/LibroCard'
+import ListaLibros from './components/ListaLibros'
+import { libros } from './data/libros'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const featuredBooks = libros.slice(0, 4)
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+    <main className="app-shell">
+      <section className="landing-hero">
+        <div className="landing-hero__copy">
+          <span className="landing-hero__eyebrow">Colección del estante</span>
+          <h1 className="landing-hero__title">
+            Diseña tu lectura en una biblioteca cálida, ordenada y fácil de explorar.
+          </h1>
+          <p className="landing-hero__description">
+            Navega entre libros con estado claro, portadas inspiradoras y una presentación que recuerda los mejores rincones de lectura.
           </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <section id="host-book-card" className="host-page">
-        <div className="host-page__intro">
-          <p className="host-page__eyebrow">Libro destacado</p>
-          <h2 className="host-page__title">Ficha de lectura clara y profesional</h2>
-          <p className="host-page__subtitle">
-            Presentación ordenada de los datos principales del libro, con estado visible y una estructura limpia.
-          </p>
+          <div className="landing-hero__stats">
+            <div>
+              <strong>{libros.length}</strong>
+              <span>títulos disponibles</span>
+            </div>
+            <div>
+              <strong>3</strong>
+              <span>colecciones temáticas</span>
+            </div>
+            <div>
+              <strong>{featuredBooks.length}</strong>
+              <span>selecciones destacadas</span>
+            </div>
+          </div>
         </div>
 
-        <div className="host-page__content">
-          <LibroCard
-            titulo="Cien años de soledad"
-            editorial="Sudamericana"
-            anio={1967}
-            estado="Disponible"
-            resumen="Una novela emblemática sobre la familia Buendía y el pueblo de Macondo, que combina realismo mágico, historia y memoria familiar en una experiencia de lectura inolvidable."
-            autores={['Gabriel García Márquez']}
+        <div className="landing-hero__visual">
+          <img
+            
+            alt="Estantería de biblioteca con libros bien organizados"
+            className="landing-hero__photo"
           />
+
+          <div className="landing-hero__gallery">
+            {featuredBooks.map((book) => (
+              <article key={book.id} className="landing-hero__cover">
+                <div className="landing-hero__cover-photo" />
+                <div className="landing-hero__cover-info">
+                  <p>{book.titulo}</p>
+                  <span>{book.autores.join(', ')}</span>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+      <section className="landing-collections">
+        <div className="landing-collections__header">
+          <p className="landing-collections__eyebrow">Espacios de lectura</p>
+          <h2>Diseño inspirado en estantes, luz cálida y navegación ordenada</h2>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+
+        <div className="landing-collections__panels">
+          <div className="landing-collections__panel">
+            <h3>Lecturas recomendadas</h3>
+            <p>Selecciona libros con alto interés y estados visibles para elegir con confianza.</p>
+          </div>
+          <div className="landing-collections__panel">
+            <h3>Novedades</h3>
+            <p>Descubre los lanzamientos recientes y los títulos más frescos del catálogo.</p>
+          </div>
+          <div className="landing-collections__panel">
+            <h3>Clásicos esenciales</h3>
+            <p>Encuentra historias que han marcado generaciones y siguen presentes en la biblioteca.</p>
+          </div>
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <ListaLibros libros={libros} />
+
+      <div className="ticks" />
+    </main>
   )
 }
 

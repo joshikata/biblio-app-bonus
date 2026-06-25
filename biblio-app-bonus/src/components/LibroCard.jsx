@@ -14,6 +14,18 @@ const LibroCard = ({ titulo, editorial, anio, estado, resumen, autores }) => {
   return (
     <article className="libro-card">
       <div className="libro-card__hero">
+        <div className="libro-card__cover">
+          <div className="libro-card__cover-art">
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className="libro-card__cover-meta">
+            <strong>{anio}</strong>
+            <span>{editorial}</span>
+          </div>
+        </div>
+
         <div className="libro-card__hero-text">
           <p className="libro-card__eyebrow">Ficha del libro</p>
           <h3 className="libro-card__titulo">{titulo}</h3>
@@ -23,6 +35,7 @@ const LibroCard = ({ titulo, editorial, anio, estado, resumen, autores }) => {
             <span>{anio}</span>
           </p>
         </div>
+
         <span className={`libro-card__estado ${estadoClase}`}>{estado}</span>
       </div>
 

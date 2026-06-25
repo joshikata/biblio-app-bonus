@@ -1,9 +1,9 @@
 .libro-card {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: #fff7ed;
+  border: 1px solid rgba(103, 66, 38, 0.16);
   border-radius: 24px;
-  box-shadow: 0 20px 46px rgba(15, 23, 42, 0.08);
-  color: #102a43;
+  box-shadow: 0 20px 46px rgba(56, 46, 31, 0.08);
+  color: #2b2722;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -13,7 +13,7 @@
 
 .libro-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 26px 70px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 26px 70px rgba(56, 46, 31, 0.14);
 }
 
 .libro-card__hero {
@@ -24,29 +24,82 @@
   flex-wrap: wrap;
 }
 
+.libro-card__cover {
+  background: linear-gradient(180deg, #f6e7d7 0%, #e3d1bf 100%);
+  border: 1px solid rgba(103, 66, 38, 0.18);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 140px;
+  padding: 1rem;
+}
+
+.libro-card__cover-art {
+  background: linear-gradient(180deg, #e9d7c4 0%, #c9b29a 100%);
+  border-radius: 18px;
+  display: grid;
+  gap: 0.5rem;
+  min-height: 160px;
+  padding: 1rem 0.75rem;
+}
+
+.libro-card__cover-art span {
+  background: rgba(75, 45, 21, 0.18);
+  border-radius: 999px;
+  display: block;
+  height: 8px;
+}
+
+.libro-card__cover-art span:nth-child(2) {
+  height: 6px;
+  width: 70%;
+}
+
+.libro-card__cover-art span:nth-child(3) {
+  height: 6px;
+  width: 50%;
+}
+
+.libro-card__cover-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.libro-card__cover-meta strong {
+  color: #3d2b23;
+  font-size: 1.05rem;
+}
+
+.libro-card__cover-meta span {
+  color: #5c5360;
+  font-size: 0.92rem;
+}
+
 .libro-card__hero-text {
   min-width: 0;
 }
 
 .libro-card__eyebrow {
-  color: #0f172a;
-  font-size: 0.8rem;
+  color: #6b4f3a;
+  font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   margin: 0 0 0.6rem;
   text-transform: uppercase;
 }
 
 .libro-card__titulo {
-  font-size: clamp(1.65rem, 2vw, 2.1rem);
+  font-size: clamp(1.7rem, 2vw, 2.2rem);
   font-weight: 800;
   margin: 0 0 0.7rem;
   line-height: 1.08;
 }
 
 .libro-card__meta {
-  color: #475569;
-  font-size: 0.98rem;
+  color: #5c5360;
+  font-size: 1rem;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
@@ -54,16 +107,16 @@
 }
 
 .libro-card__meta-separator {
-  color: #cbd5e1;
+  color: rgba(92, 83, 96, 0.5);
 }
 
 .libro-card__section {
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-top: 1px solid rgba(103, 66, 38, 0.14);
   padding-top: 1.35rem;
 }
 
 .libro-card__section-title {
-  color: #0f172a;
+  color: #3d2b23;
   font-size: 1rem;
   letter-spacing: 0.02em;
   margin: 0 0 0.8rem;
@@ -72,8 +125,8 @@
 .libro-card__resumen,
 .libro-card__autores {
   margin: 0;
-  color: #334e68;
-  line-height: 1.85;
+  color: #4f4f56;
+  line-height: 1.9;
 }
 
 .libro-card__autores {
@@ -93,15 +146,15 @@
 }
 
 .libro-card__estado--disponible {
-  background: #16a34a;
+  background: #3f6212;
 }
 
 .libro-card__estado--prestado {
-  background: #dc2626;
+  background: #9b2915;
 }
 
 .libro-card__estado--reservado {
-  background: #f59e0b;
+  background: #b45309;
 }
 
 @media (max-width: 640px) {

@@ -1,0 +1,9 @@
+Crea un componente React llamado LibroCard.jsx en src/components.
+
+Debe recibir las props: titulo, editorial, anio, estado, resumen y autores.
+
+Muestra la información en una tarjeta ordenada y visual. Aplica un color diferente al estado:
+- Disponible: verde
+- Prestado: rojo
+- Reservado: amarillo
+

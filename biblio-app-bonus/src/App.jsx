@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import LibroCard from './components/LibroCard'
 import './App.css'
 
 function App() {
@@ -28,6 +29,27 @@ function App() {
         >
           Count is {count}
         </button>
+      </section>
+
+      <section id="host-book-card" className="host-page">
+        <div className="host-page__intro">
+          <p className="host-page__eyebrow">Libro destacado</p>
+          <h2 className="host-page__title">Ficha de lectura clara y profesional</h2>
+          <p className="host-page__subtitle">
+            Presentación ordenada de los datos principales del libro, con estado visible y una estructura limpia.
+          </p>
+        </div>
+
+        <div className="host-page__content">
+          <LibroCard
+            titulo="Cien años de soledad"
+            editorial="Sudamericana"
+            anio={1967}
+            estado="Disponible"
+            resumen="Una novela emblemática sobre la familia Buendía y el pueblo de Macondo, que combina realismo mágico, historia y memoria familiar en una experiencia de lectura inolvidable."
+            autores={['Gabriel García Márquez']}
+          />
+        </div>
       </section>
 
       <div className="ticks"></div>

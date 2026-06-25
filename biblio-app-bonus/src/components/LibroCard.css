@@ -1,0 +1,115 @@
+.libro-card {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 20px 46px rgba(15, 23, 42, 0.08);
+  color: #102a43;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.libro-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 26px 70px rgba(15, 23, 42, 0.12);
+}
+
+.libro-card__hero {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.libro-card__hero-text {
+  min-width: 0;
+}
+
+.libro-card__eyebrow {
+  color: #0f172a;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin: 0 0 0.6rem;
+  text-transform: uppercase;
+}
+
+.libro-card__titulo {
+  font-size: clamp(1.65rem, 2vw, 2.1rem);
+  font-weight: 800;
+  margin: 0 0 0.7rem;
+  line-height: 1.08;
+}
+
+.libro-card__meta {
+  color: #475569;
+  font-size: 0.98rem;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.libro-card__meta-separator {
+  color: #cbd5e1;
+}
+
+.libro-card__section {
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  padding-top: 1.35rem;
+}
+
+.libro-card__section-title {
+  color: #0f172a;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.8rem;
+}
+
+.libro-card__resumen,
+.libro-card__autores {
+  margin: 0;
+  color: #334e68;
+  line-height: 1.85;
+}
+
+.libro-card__autores {
+  font-weight: 600;
+}
+
+.libro-card__estado {
+  align-self: flex-start;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.65rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.libro-card__estado--disponible {
+  background: #16a34a;
+}
+
+.libro-card__estado--prestado {
+  background: #dc2626;
+}
+
+.libro-card__estado--reservado {
+  background: #f59e0b;
+}
+
+@media (max-width: 640px) {
+  .libro-card {
+    padding: 1.5rem;
+  }
+
+  .libro-card__hero {
+    flex-direction: column;
+  }
+}

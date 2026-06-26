@@ -1,6 +1,6 @@
 ## Vista previa
 
-![Vista previa de BiblioApp](./src/assets/preview.png)
+![Vista previa de BiblioApp](preview.png)
 
 
 # BiblioApp React

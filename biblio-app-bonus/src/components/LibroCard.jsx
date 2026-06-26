@@ -7,22 +7,20 @@ const estadoClases = {
   Reservado: 'libro-card__estado--reservado',
 }
 
-const LibroCard = ({ titulo, editorial, anio, estado, resumen, autores }) => {
+const LibroCard = ({ titulo, editorial, anio, estado, resumen, autores, esNovedad }) => {
   const estadoClase = estadoClases[estado] || 'libro-card__estado--disponible'
   const autoresTexto = Array.isArray(autores) ? autores.join(', ') : autores
 
   return (
     <article className="libro-card">
+      {esNovedad && <span className="libro-card__novedad">NOVEDAD</span>}
+
       <div className="libro-card__hero">
         <div className="libro-card__cover">
           <div className="libro-card__cover-art">
             <span />
             <span />
             <span />
-          </div>
-          <div className="libro-card__cover-meta">
-            <strong>{anio}</strong>
-            <span>{editorial}</span>
           </div>
         </div>
 
@@ -53,21 +51,21 @@ const LibroCard = ({ titulo, editorial, anio, estado, resumen, autores }) => {
 }
 
 LibroCard.propTypes = {
-  titulo: PropTypes.string,
-  editorial: PropTypes.string,
-  anio: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  estado: PropTypes.oneOf(['Disponible', 'Prestado', 'Reservado']),
-  resumen: PropTypes.string,
-  autores: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.string]),
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  titulo: PropTypes.string.isRequired,
+  editorial: PropTypes.string.isRequired,
+  anio: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  estado: PropTypes.oneOf(['Disponible', 'Prestado', 'Reservado']).isRequired,
+  resumen: PropTypes.string.isRequired,
+  autores: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.string,
+  ]).isRequired,
+  esNovedad: PropTypes.bool,
 }
 
 LibroCard.defaultProps = {
-  titulo: 'Título desconocido',
-  editorial: 'Editorial no disponible',
-  anio: 'N/A',
-  estado: 'Disponible',
-  resumen: 'No hay resumen disponible.',
-  autores: 'Autor desconocido',
+  esNovedad: false,
 }
 
 export default LibroCard

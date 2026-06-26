@@ -14,21 +14,29 @@ const ListaLibros = ({ libros }) => {
     )
   }
 
+  const librosNovedades = libros.filter((libro) => libro.esNovedad)
   const librosFiltrados =
     filtroSeleccionado === 'Todos'
       ? libros
       : libros.filter((libro) => libro.estado === filtroSeleccionado)
 
   const mostrarMensajeVacio = librosFiltrados.length === 0
+  const totalLibros = libros.length
 
   return (
     <section className="lista-libros">
       <div className="lista-libros__header">
         <h2 className="lista-libros__title">Catálogo de libros</h2>
-        <FiltroEstado
-          filtroActual={filtroSeleccionado}
-          onFiltroChange={setFiltroSeleccionado}
-        />
+        <div className="lista-libros__meta">
+          <div className="lista-libros__novedad-badge">
+            <strong>{librosNovedades.length}</strong>
+            <span>novedades</span>
+          </div>
+          <FiltroEstado
+            filtroActual={filtroSeleccionado}
+            onFiltroChange={setFiltroSeleccionado}
+          />
+        </div>
       </div>
 
       {mostrarMensajeVacio ? (
@@ -54,15 +62,16 @@ ListaLibros.propTypes = {
   libros: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-      titulo: PropTypes.string,
-      editorial: PropTypes.string,
-      anio: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      estado: PropTypes.oneOf(['Disponible', 'Prestado', 'Reservado']),
-      resumen: PropTypes.string,
+      titulo: PropTypes.string.isRequired,
+      editorial: PropTypes.string.isRequired,
+      anio: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      estado: PropTypes.oneOf(['Disponible', 'Prestado', 'Reservado']).isRequired,
+      resumen: PropTypes.string.isRequired,
       autores: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.string),
         PropTypes.string,
-      ]),
+      ]).isRequired,
+      esNovedad: PropTypes.bool,
     })
   ),
 }

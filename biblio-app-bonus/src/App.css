@@ -1,171 +1,16 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-}
-
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
-}
-
-#center {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
-}
-
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
-}
-
-#spacer {
-  height: 88px;
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
-}
-
 .app-shell {
-  background: #f5efe3;
-  color: #1f2937;
+  --surface: #fffaff;
+  --surface-soft: #f6eeff;
+  --border: rgba(167, 139, 250, 0.28);
+  --ink: #1f2937;
+  --muted: #5f6676;
+
+  background:
+    radial-gradient(1200px 500px at -10% -20%, rgba(251, 207, 232, 0.45), transparent 65%),
+    radial-gradient(950px 500px at 115% -10%, rgba(196, 181, 253, 0.5), transparent 62%),
+    linear-gradient(160deg, #f9f4ff 0%, #f5f8ff 45%, #fff7fc 100%);
+  color: var(--ink);
   min-height: 100vh;
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .landing-hero {
@@ -173,8 +18,8 @@
   display: grid;
   gap: 2.5rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 1240px;
   margin: 0 auto;
+  max-width: 1240px;
   padding: 3.5rem 2rem 2rem;
 }
 
@@ -183,55 +28,54 @@
 }
 
 .landing-hero__eyebrow,
-.landing-collections__eyebrow,
-.host-page__eyebrow {
-  color: #4d453c;
-  font-size: 0.85rem;
-  font-weight: 700;
+.landing-collections__eyebrow {
+  color: #5b3f96;
+  font-size: 0.82rem;
+  font-weight: 800;
   letter-spacing: 0.2em;
   margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
 .landing-hero__title {
-  color: #1e293b;
-  font-size: clamp(2.5rem, 3vw, 3.75rem);
-  line-height: 1.03;
+  color: #221834;
+  font-size: clamp(2.3rem, 3.2vw, 3.7rem);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
   margin: 0;
-  letter-spacing: -0.04em;
 }
 
 .landing-hero__description {
-  color: #475569;
-  font-size: 1.05rem;
-  line-height: 1.85;
-  margin: 1.6rem 0 2rem;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin: 1.5rem 0 2rem;
   max-width: 520px;
 }
 
 .landing-hero__stats {
   display: grid;
+  gap: 0.9rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
 }
 
 .landing-hero__stats div {
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(77, 69, 60, 0.16);
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid var(--border);
   border-radius: 18px;
-  padding: 1rem 1.25rem;
+  padding: 1rem 1.15rem;
 }
 
 .landing-hero__stats strong {
+  color: #2a1458;
   display: block;
-  color: #1f2937;
-  font-size: 1.4rem;
-  margin-bottom: 0.25rem;
+  font-size: 1.35rem;
+  margin-bottom: 0.2rem;
 }
 
 .landing-hero__stats span {
-  color: #6b7280;
-  font-size: 0.95rem;
+  color: #4b5563;
+  font-size: 0.92rem;
 }
 
 .landing-hero__visual {
@@ -241,13 +85,21 @@
 }
 
 .landing-hero__photo {
-  border-radius: 32px;
+  background:
+    linear-gradient(145deg, rgba(251, 207, 232, 0.75) 0%, rgba(196, 181, 253, 0.72) 55%, rgba(253, 242, 248, 0.9) 100%),
+    repeating-linear-gradient(
+      -25deg,
+      rgba(79, 70, 229, 0.08) 0,
+      rgba(79, 70, 229, 0.08) 18px,
+      rgba(255, 255, 255, 0.24) 18px,
+      rgba(255, 255, 255, 0.24) 34px
+    );
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  border-radius: 30px;
+  box-shadow: 0 28px 90px rgba(91, 63, 150, 0.2);
   display: block;
-  height: 100%;
   min-height: 420px;
-  object-fit: cover;
   width: 100%;
-  box-shadow: 0 28px 90px rgba(15, 23, 42, 0.16);
 }
 
 .landing-hero__gallery {
@@ -257,287 +109,8 @@
 }
 
 .landing-hero__cover {
-  background: #fff8f0;
-  border: 1px solid rgba(77, 69, 60, 0.14);
-  border-radius: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  min-height: 220px;
-  overflow: hidden;
-  padding: 1rem;
-}
-
-.landing-hero__cover-photo {
-  background: linear-gradient(135deg, #fef4e6 0%, #d8c4a3 100%);
-  border-radius: 16px;
-  flex: 1 1 0;
-}
-
-.landing-hero__cover-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.landing-hero__cover-info p {
-  color: #1f2937;
-  font-weight: 700;
-  line-height: 1.3;
-  margin: 0;
-}
-
-.landing-hero__cover-info span {
-  color: #6b7280;
-  font-size: 0.95rem;
-}
-
-.landing-collections {
-  background: #fff9f1;
-  border: 1px solid rgba(77, 69, 60, 0.12);
-  border-radius: 28px;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
-  margin: 0 auto 2.5rem;
-  max-width: 1240px;
-  padding: 2.5rem 2rem;
-}
-
-.landing-collections__header {
-  margin-bottom: 1.75rem;
-}
-
-.landing-collections__header h2 {
-  color: #1f2937;
-  font-size: clamp(2rem, 2.5vw, 2.75rem);
-  margin: 0;
-  line-height: 1.08;
-}
-
-.landing-collections__panels {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.landing-collections__panel {
-  background: rgba(255, 255, 255, 0.96);
-  border-radius: 20px;
-  padding: 1.75rem;
-  min-height: 180px;
-  border: 1px solid rgba(77, 69, 60, 0.10);
-}
-
-.landing-collections__panel h3 {
-  color: #1f2937;
-  margin: 0 0 0.75rem;
-}
-
-.landing-collections__panel p {
-  color: #475569;
-  line-height: 1.8;
-  margin: 0;
-}
-
-.lista-libros {
-  margin: 0 auto 4rem;
-  max-width: 1240px;
-  padding: 0 2rem 3rem;
-}
-
-.lista-libros__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.lista-libros__title {
-  font-size: 2rem;
-  margin: 0;
-  color: #1f2937;
-}
-
-.lista-libros__grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  margin-bottom: 2rem;
-}
-
-.lista-libros__empty {
-  color: #6b7280;
-  font-size: 1rem;
-  padding: 3rem 2rem;
-  text-align: center;
-  background: rgba(248, 245, 237, 0.5);
-  border-radius: 24px;
-  border: 1px solid rgba(103, 66, 38, 0.12);
-}
-
-.lista-libros__count {
-  color: #6b7280;
-  font-size: 0.95rem;
-  text-align: right;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .lista-libros__header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .lista-libros__title {
-    font-size: 1.75rem;
-  }
-}
-
-@media (max-width: 1024px) {
-  .landing-hero {
-    grid-template-columns: 1fr;
-  }
-
-  .landing-hero__stats {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .landing-collections__panels {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 640px) {
-  .landing-hero {
-    padding: 2rem 1rem 1rem;
-  }
-
-  .landing-hero__title {
-    font-size: 2.25rem;
-  }
-
-  .landing-hero__stats {
-    grid-template-columns: 1fr;
-  }
-}
-
-.ticks {
-  position: relative;
-  width: 100%;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
-
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
-  }
-}
-
-.app-shell {
-  background: #f8fafc;
-  color: #0f172a;
-  min-height: 100vh;
-}
-
-.landing-hero {
-  align-items: center;
-  display: grid;
-  gap: 2.5rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 3.5rem 2rem 2rem;
-}
-
-.landing-hero__copy {
-  max-width: 540px;
-}
-
-.landing-hero__eyebrow,
-.landing-collections__eyebrow,
-.host-page__eyebrow {
-  color: #1e293b;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-.landing-hero__title {
-  font-size: clamp(2.75rem, 3.5vw, 4.25rem);
-  line-height: 1.02;
-  margin: 0;
-}
-
-.landing-hero__description {
-  color: #475569;
-  font-size: 1.05rem;
-  line-height: 1.9;
-  margin: 1.5rem 0 2rem;
-  max-width: 480px;
-}
-
-.landing-hero__stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.landing-hero__stats div {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 18px;
-  padding: 1rem 1.25rem;
-}
-
-.landing-hero__stats strong {
-  display: block;
-  font-size: 1.4rem;
-  margin-bottom: 0.25rem;
-}
-
-.landing-hero__stats span {
-  color: #64748b;
-  font-size: 0.95rem;
-}
-
-.landing-hero__visual {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.landing-hero__photo {
-  border-radius: 32px;
-  display: block;
-  height: 100%;
-  min-height: 420px;
-  object-fit: cover;
-  width: 100%;
-  box-shadow: 0 26px 80px rgba(15, 23, 42, 0.12);
-}
-
-.landing-hero__gallery {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.landing-hero__cover {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
   border-radius: 22px;
   display: flex;
   flex-direction: column;
@@ -548,7 +121,7 @@
 }
 
 .landing-hero__cover-photo {
-  background: linear-gradient(145deg, #f8fafc 0%, #cbd5e1 100%);
+  background: linear-gradient(145deg, #f7e8ff 0%, #ddd6fe 100%);
   border-radius: 16px;
   flex: 1 1 0;
 }
@@ -560,6 +133,7 @@
 }
 
 .landing-hero__cover-info p {
+  color: #1f2937;
   font-weight: 700;
   line-height: 1.3;
   margin: 0;
@@ -567,14 +141,14 @@
 
 .landing-hero__cover-info span {
   color: #64748b;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
 }
 
 .landing-collections {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid var(--border);
   border-radius: 28px;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 24px 60px rgba(91, 63, 150, 0.1);
   margin: 0 auto 2.5rem;
   max-width: 1240px;
   padding: 2.5rem 2rem;
@@ -585,9 +159,10 @@
 }
 
 .landing-collections__header h2 {
-  font-size: clamp(2rem, 2.5vw, 2.75rem);
-  margin: 0;
+  color: #221834;
+  font-size: clamp(1.95rem, 2.5vw, 2.7rem);
   line-height: 1.08;
+  margin: 0;
 }
 
 .landing-collections__panels {
@@ -597,18 +172,20 @@
 }
 
 .landing-collections__panel {
-  background: #f8fafc;
+  background: var(--surface);
+  border: 1px solid rgba(167, 139, 250, 0.2);
   border-radius: 20px;
-  padding: 1.5rem;
   min-height: 180px;
+  padding: 1.5rem;
 }
 
 .landing-collections__panel h3 {
+  color: #2f2349;
   margin: 0 0 0.75rem;
 }
 
 .landing-collections__panel p {
-  color: #475569;
+  color: #3f4a5f;
   line-height: 1.8;
   margin: 0;
 }
@@ -616,24 +193,80 @@
 .lista-libros {
   margin: 0 auto 4rem;
   max-width: 1240px;
-  padding: 0 2rem;
+  padding: 0 2rem 2rem;
+}
+
+.lista-libros__header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem 2rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .lista-libros__title {
+  color: #261b3d;
   font-size: 2rem;
-  margin-bottom: 1.25rem;
+  margin: 0;
+}
+
+.lista-libros__meta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
+  justify-content: center;
+}
+
+.lista-libros__novedad-badge {
+  align-items: baseline;
+  background: linear-gradient(135deg, #fbcfea 0%, #ddd6fe 100%);
+  border-radius: 999px;
+  color: #4c1d95;
+  display: inline-flex;
+  gap: 0.45rem;
+  padding: 0.55rem 1rem;
+}
+
+.lista-libros__novedad-badge strong {
+  font-size: 1rem;
+}
+
+.lista-libros__novedad-badge span {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .lista-libros__grid {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.25rem;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.lista-libros__grid > * {
+  height: 100%;
 }
 
 .lista-libros__empty {
-  color: #475569;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  color: #5b506e;
   font-size: 1rem;
-  padding: 2rem 0;
+  padding: 2rem;
+  text-align: center;
+}
+
+.lista-libros__count {
+  color: #596276;
+  font-size: 0.95rem;
+  margin: 0;
   text-align: center;
 }
 
@@ -649,18 +282,73 @@
   .landing-collections__panels {
     grid-template-columns: 1fr;
   }
+
+  .lista-libros__grid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .lista-libros__header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .lista-libros__title {
+    font-size: 1.75rem;
+  }
 }
 
 @media (max-width: 640px) {
   .landing-hero {
-    padding: 2rem 1rem 1rem;
+    padding: 2.25rem 1rem 1rem;
+  }
+
+  .landing-hero__copy {
+    max-width: 100%;
   }
 
   .landing-hero__title {
-    font-size: 2.25rem;
+    font-size: 2.2rem;
+    line-height: 1.08;
   }
 
   .landing-hero__stats {
     grid-template-columns: 1fr;
+  }
+
+  .landing-hero__description {
+    font-size: 0.98rem;
+    line-height: 1.68;
+    margin: 1.25rem 0 1.7rem;
+  }
+
+  .landing-hero__gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-collections {
+    padding: 2rem 1rem;
+  }
+
+  .lista-libros {
+    padding: 0 1rem 2rem;
+  }
+
+  .lista-libros__header {
+    margin-bottom: 1.5rem;
+  }
+
+  .lista-libros__meta {
+    gap: 0.75rem 1rem;
+  }
+
+  .lista-libros__novedad-badge {
+    padding: 0.5rem 0.85rem;
+  }
+
+  .lista-libros__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }

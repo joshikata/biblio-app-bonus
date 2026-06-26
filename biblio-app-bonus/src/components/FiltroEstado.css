@@ -1,0 +1,57 @@
+.filtro-estado {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.filtro-estado__label {
+  color: #3d2b23;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.filtro-estado__botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.filtro-estado__boton {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid rgba(103, 66, 38, 0.2);
+  border-radius: 20px;
+  color: #3d2b23;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.25s ease;
+}
+
+.filtro-estado__boton:hover {
+  border-color: rgba(103, 66, 38, 0.4);
+  background: rgba(248, 245, 237, 0.8);
+}
+
+.filtro-estado__boton--activo {
+  background: #6b4f3a;
+  border-color: #6b4f3a;
+  color: #ffffff;
+}
+
+.filtro-estado__boton--activo:hover {
+  background: #5a4230;
+  border-color: #5a4230;
+}
+
+@media (max-width: 768px) {
+  .filtro-estado {
+    gap: 0.6rem;
+  }
+
+  .filtro-estado__boton {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}

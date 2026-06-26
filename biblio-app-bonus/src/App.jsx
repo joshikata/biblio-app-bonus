@@ -1,6 +1,7 @@
 import LibroCard from './components/LibroCard'
 import ListaLibros from './components/ListaLibros'
 import { libros } from './data/libros'
+import estanteriaImg from './assets/estanteria.jpg'
 import './App.css'
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
 
         <div className="landing-hero__visual">
           <img
-            
+            src={estanteriaImg}
             alt="Estantería de biblioteca con libros bien organizados"
             className="landing-hero__photo"
           />

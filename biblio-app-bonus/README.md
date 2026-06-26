@@ -1,3 +1,8 @@
+## Vista previa
+
+![Vista previa de BiblioApp](./src/assets/preview.png)
+
+
 # BiblioApp React
 
 Aplicación web SPA desarrollada en React para una biblioteca comunitaria. Permite visualizar un catálogo digital de libros, consultar su información principal y filtrar los libros según su estado.
@@ -75,3 +80,6 @@ npm run dev
 ```
 
 
+**Fernanda De La Mora**
+
+GitHub: https://github.com/joshikata
